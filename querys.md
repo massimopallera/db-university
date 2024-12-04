@@ -14,3 +14,13 @@
 
 7)  SELECT count(id) as Departments FROM departments
 8)  SELECT * FROM teachers WHERE phone is null
+
+<!-- with null at the first column, I'll bypass the primary key -->
+9) INSERT students
+VALUES (NULL, 34, "Massimo", "Pallera", "2004/04/23","PLLMSM", "2024/04/15", "31341544", "pallera.massimo@gmail.com")
+
+10) UPDATE teachers
+SET phone="126"
+WHERE name="Pietro" AND surname ="Rizzo"
+
+11) DELETE FROM students WHERE email="pallera.massimo@gmail.com"
