@@ -77,4 +77,10 @@ FROM exam_student AS es
 JOIN students AS s ON es.student_id = s.id
 GROUP BY s.id
 
+SELECT count(es.exam_id) AS "Tries", max(es.vote) AS "Max Vote", s.id
+FROM exam_student AS es
+JOIN students AS s ON es.student_id = s.id
+GROUP BY s.id
+HAVING max(es.vote) >= 18
+
 ```
