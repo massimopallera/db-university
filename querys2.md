@@ -63,6 +63,18 @@ JOIN courses AS c ON ct.course_id = c.id
 JOIN degrees AS d ON c.degree_id = d.id
 
 -- 6)
+SELECT DISTINCT t.name, t.surname
+FROM course_teacher AS ct
+JOIN teachers AS t ON ct.teacher_id = t.id
+JOIN courses AS c ON ct.course_id = c.id
+JOIN degrees AS dg ON c.degree_id = dg.id
+JOIN departments AS d ON dg.department_id = d.id 
+WHERE d.name = "Dipartimento di Matematica"
 
+-- 7) ??
+SELECT count(es.exam_id) AS "Tries", max(es.vote) AS "Max Vote", s.id
+FROM exam_student AS es
+JOIN students AS s ON es.student_id = s.id
+GROUP BY s.id
 
 ```
